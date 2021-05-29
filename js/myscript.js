@@ -1,4 +1,3 @@
-
 let app = angular.module("MyApp", []);
 
 app.controller("MyCtrl", ($scope) => {
@@ -10,6 +9,6 @@ app.controller("MyCtrl", ($scope) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      $scope.all_data = response.data;
+      $scope.all_data = data;
     });
 });
