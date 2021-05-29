@@ -1,4 +1,3 @@
-const URL = "https://covid19.mathdro.id/api";
 
 let app = angular.module("MyApp", []);
 
