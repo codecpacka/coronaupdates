@@ -1,4 +1,4 @@
-const URL ="https://covid19.mathdro.id/api";
+
 
 let app = angular.module("MyApp", []);
 
@@ -7,32 +7,22 @@ app.controller("MyCtrl", ($scope, $http) => {
 
   console.log("App Loaded");
 
-  $http.get(URL).then(
-    (response) => {
-      console.log(response.data);
-      $scope.all_data = response.data;
-    },
-    (error) => {
-      console.log(error);
-    }
-  );
-
-  $scope.get_c_data = () => {
-    let country = $scope.c;
-    if(country == '')
+  $scope.get_s_data = () => {
+    let state = $scope.s;
+    if(state == '')
     {
       return;
     }
 
-    $http.get('${URL}/countries/${country}')
-    .then(
-      (response) => {
-        console.log(response.data);
-        $scope.c_data = response.data;
-      }, 
-      (error) => {
-        console.log(error);
+    fetch('https://api.postalpincode.in/pincode/{PINCODE}')
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((po) => {
+        for (post in po) {
+          for(subpost in po[post]) {
+            console.log(po[post][subpost]);
+          }
+        }
       });
-
-  };
+    });
 });
