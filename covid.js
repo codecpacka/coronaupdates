@@ -48,18 +48,18 @@ const outputhtml = (matches) => {
 
 search.addEventListener("input", () => searchList(search.value));
 
-//old code
-// fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
-//   method: "GET",
-//   headers: {
-//     "x-rapidapi-key": "4a6b3f0c97mshd186f8234f0fd73p1b5688jsnde1e707ffbad",
-//     "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//   });
+// old code
+fetch("https://corona-virus-world-and-india-data.p.rapidapi.com/api_india", {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "4a6b3f0c97mshd186f8234f0fd73p1b5688jsnde1e707ffbad",
+    "x-rapidapi-host": "corona-virus-world-and-india-data.p.rapidapi.com",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.error(err);
+  });

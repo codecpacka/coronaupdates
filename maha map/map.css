@@ -1,0 +1,13 @@
+.mahaMap path {
+  stroke: #180054;
+  stroke-width: 1;
+  fill: #f5505000;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+#Plan_x0020_1 a:hover > path {
+  fill: #f316e86b;
+}
+#Plan_x0020_1 path:hover {
+  fill: #f316e86b;
+}
