@@ -1926,7 +1926,7 @@
 	l-0.4-0.2l-0.4-0.8l-0.3-1.4l-0.3-1.8l-0.4-1.6l-0.4-2l-0.2-1.3l-0.1-1l0.9,0.9L513.1,431.3z" />
 	<path d="M790,262h10v10h-10V262z" fill="#D3D3D3" />
 	<path class="st2" d="M15,10" fill="#D3D3D3" />
-	<text transform="matrix(0.3171 -0.9484 0.9484 0.3171 463.9442 283.8968)" class="st0 st3 st4">Ahmadabad</text>
+	<text transform="matrix(0.3171 -0.9484 0.9484 0.3171 463.9442 283.8968)"  class="st0 st3 st4">Ahmadabad</text>
 	<text transform="matrix(1 0 0 1 375.7625 377.6944)" class="st0 st3 st5">Amreli</text>
 	<text transform="matrix(1 0 0 1 485.6706 267.9201)" class="st0 st3 st5">Anand</text>
 	<text transform="matrix(0.3691 -0.9294 0.9294 0.3691 541.0463 184.427)" class="st0 st3 st5">Aravalli</text>
