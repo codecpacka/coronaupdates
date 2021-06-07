@@ -105,9 +105,7 @@ const data = {
 
 function main() {
   let data2 = datam;
-  for (key in data2) {
-    console.log(data2[key]);
-  }
+  console.log(data2);
   // console.log(states);
   // onGeneratedRow(sates, data);
   fetch("india.svg")
