@@ -1,108 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <script 
-        src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
-        crossorigin="anonymous">
-    </script>
-    
-    <script 
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
-        crossorigin="anonymous">
-    </script>
-        
-    <script 
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
-        crossorigin="anonymous">
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-
-    <!-- <script src="js/myscript.js"></script> -->
+  <meta charset="UTF-8">
+  <title>Gujarat State Latest Corona Updates</title>
+  <link rel="stylesheet" href="./style.css">
+  
 
 </head>
-
 <body>
-    
-    
-    <div class="container">
-        <div class="text-uppercase">
-        <input 
-            type="name" 
-            id="search" 
-            class="form-control" 
-            id="exampleFormControlInput1" 
-            placeholder="search state(by Abb or Full  name)">
-            <i class="material-icons md-18">search</i>
-        </div>
-    </div> 
-    <div id="match-list" align="center"></div>
+
+  <input type="text" id="text" placeholder="Enter the State">
+<!-- partial:index.partial.html -->
+<div id="map"></div>
+
+<!-- <div><small>Map from <a href="https://simplemaps.com/resources/svg-maps" target="_blank">SimpleMaps</a></small></div> -->
+
+
+
+<div id="popper">Ciao</div>
+<!-- partial -->
+<script src='https://unpkg.com/@svgdotjs/svg.js@3.0.16/dist/svg.min.js'></script>
+<script src='https://unpkg.com/@svgdotjs/svg.panzoom.js@2.1.1/dist/svg.panzoom.min.js'></script> 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js'></script>
+<!-- <script src="test.js"></script> -->
+<script  src="guj.js"></script>
 </body>
-
-
-
-
-<script src="covid.js"></script>
-
-<!-- //bhargav code   -->
-<!-- <body ng-app="MyApp" ng-controller="MyCtrl">
-
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center"> {{ title }} </h1>
-            <p class="text-center pt-3">covid-19</p>
-
-            <div class="row text-center pt-3">
-                <div class="col-md-4">
-                    <div class="card bg-warning text-white">
-                        <div class="card-body">
-                            <h1  class="pt-3">Confirm Cases</h1>
-                            <h1>{{ all_data.confirmed.value }}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-success text-white">
-                        <div class="card-body">
-                            <h1 class="pt-3">Recoverd Cases</h1>
-                            <h1>{{ all_data.recovered.value }}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card bg-danger text-white">
-                        <div class="card-body">
-                            <h1 class="pt-3">Deathed Cases</h1>
-                            <h1>{{ all_data.deaths.value }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <input 
-                    type="text"
-                    class="form-control mt-4" 
-                    placeholder="Enter Your Countries"
-                    ng-model="s"
-                    ng-change= get_s_data()
-                />
-            </div>
-
-        </div>
-    </div>
-    <script src="covid.js"></script>
-</body> -->
 </html>
