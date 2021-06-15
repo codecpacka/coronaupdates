@@ -34,15 +34,15 @@ const getColor = (ratio) => {
 
   const r = Math.ceil(
     parseInt(color1.substring(0, 2), 16) * ratio +
-    parseInt(color2.substring(0, 2), 16) * (1 - ratio)
+      parseInt(color2.substring(0, 2), 16) * (1 - ratio)
   );
   const g = Math.ceil(
     parseInt(color1.substring(2, 4), 16) * ratio +
-    parseInt(color2.substring(2, 4), 16) * (1 - ratio)
+      parseInt(color2.substring(2, 4), 16) * (1 - ratio)
   );
   const b = Math.ceil(
     parseInt(color1.substring(4, 6), 16) * ratio +
-    parseInt(color2.substring(4, 6), 16) * (1 - ratio)
+      parseInt(color2.substring(4, 6), 16) * (1 - ratio)
   );
 
   return "#" + getHex(r) + getHex(g) + getHex(b);
@@ -110,6 +110,7 @@ function main() {
   // }
   // console.log(states);
   // onGeneratedRow(sates, data);
+  console.log(datam);
   fetch("india.svg")
     .then((response) => response.text())
     .then((image) => {
@@ -121,12 +122,21 @@ function main() {
       // get maximum value among the supplied data
       // const max = Math.max(...Object.values(data));
       const data = Object.values(datam.state_wise);
-      const max = Math.max.apply(Math, data.map(function (o) { return o.active; }));
+      const max = Math.max.apply(
+        Math,
+        data.map(function (o) {
+          return o.active;
+        })
+      );
       console.log(max);
       for (const region of draw.find("path")) {
         // const regionValue = data[region.id()];
-        const currentStateData = data.find(function (obj) { if (obj.statecode === region.id()) { return true } });
-        if (currentStateData && currentStateData.hasOwnProperty('active')) {
+        const currentStateData = data.find(function (obj) {
+          if (obj.statecode === region.id()) {
+            return true;
+          }
+        });
+        if (currentStateData && currentStateData.hasOwnProperty("active")) {
           const regionValue = currentStateData.active;
           const confirmed = currentStateData.confirmed;
           const deaths = currentStateData.deaths;
@@ -147,7 +157,11 @@ function main() {
 
           // show region data when clicking on it
           region.on("click", () => {
-            alert(`${region.attr("name")} (${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${regionValue} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`);
+            alert(
+              `${region.attr(
+                "name"
+              )} (${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${regionValue} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`
+            );
           });
 
           region.on("mouseover", () => {
@@ -164,7 +178,6 @@ function main() {
             popperEl.style.visibility = "hidden";
           });
         }
-
       }
     });
 }
