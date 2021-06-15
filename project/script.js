@@ -117,7 +117,7 @@ function main() {
       let startOfSvg = image.indexOf("<svg");
       startOfSvg = startOfSvg >= 0 ? startOfSvg : 0;
 
-      const draw = SVG(image.slice(startOfSvg)).addTo("#map").size("100%");
+      const draw = SVG(image.slice(startOfSvg)).addTo("#map");
 
       // get maximum value among the supplied data
       // const max = Math.max(...Object.values(data));
@@ -160,14 +160,14 @@ function main() {
             alert(
               `${region.attr(
                 "name"
-              )} (${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${regionValue} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`
+              )} (${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${confirmed} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`
             );
           });
 
           region.on("mouseover", () => {
             popperEl.innerHTML = `<b>${region.attr(
               "name"
-            )} (${region.id()})</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${regionValue} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
+            )} (${region.id()})</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${confirmed} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
             popperEl.style.visibility = "visible";
             popperInstance = Popper.createPopper(region.node, popperEl, {
               placement: "bottom",
