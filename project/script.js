@@ -148,7 +148,7 @@ function Gujrat() {
 
       // get maximum value among the supplied data
       // const max = Math.max(...Object.values(data));
-      const data = Object.values(datam.state_wise.Gujarat);
+      const data = Object.values(datam.state_wise.Gujarat.district);
       const data2 = datam.state_wise.Gujarat.district;
       const max = Math.max.apply(
         Math,
@@ -187,13 +187,13 @@ function Gujrat() {
             // show region data when clicking on it
             region.on("click", () => {
               alert(
-                `(${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${confirmed} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`
+                `${region.id()} :  Active Cases : ${regionValue} , Confirm Cases : ${confirmed} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`
               );
             });
 
             region.on("mouseover", () => {
               popperEl.innerHTML = `<b>
-               (${region.id()})</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${confirmed} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
+               ${region.id()}</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${confirmed} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
               popperEl.style.visibility = "visible";
               popperInstance = Popper.createPopper(region.node, popperEl, {
                 placement: "bottom",
