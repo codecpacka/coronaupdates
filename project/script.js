@@ -117,8 +117,6 @@ function main() {
             popperEl.innerHTML = `<b>${region.attr(
               "name"
             )} (${region.id()})</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${confirmed} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
-<<<<<<< HEAD
-=======
             popperEl.style.visibility = "visible";
             popperInstance = Popper.createPopper(region.node, popperEl, {
               placement: "bottom",
@@ -140,76 +138,65 @@ function Gujrat() {
   // }
   // console.log(states);
   // onGeneratedRow(sates, data);
-  console.log(datam);
-  fetch("gujrat.svg")
+  fetch("Gujrat.svg")
     .then((response) => response.text())
     .then((image) => {
       let startOfSvg = image.indexOf("<svg");
       startOfSvg = startOfSvg >= 0 ? startOfSvg : 0;
 
-      const draw = SVG(image.slice(startOfSvg)).addTo("#gujrat");
+      const draw = SVG(image.slice(startOfSvg)).addTo("#map").size("100%");
 
       // get maximum value among the supplied data
       // const max = Math.max(...Object.values(data));
       const data = Object.values(datam.state_wise.Gujarat);
-      const max = Math.max.apply(
-        Math,
-        data.map(function (o) {
-          return o.active;
-        })
-      );
+      const data2 = datam.state_wise.Gujarat.district;
+      const max = Math.max.apply(Math, data.map(function (o) { return o.active; }));
       console.log(max);
       for (const region of draw.find("path")) {
         // const regionValue = data[region.id()];
-        console.log(data);
-        const currentStateData = data.find(function (obj) {
-          if (obj.statecode === region.id()) {
-            return true;
-          }
-        });
-        if (currentStateData && currentStateData.hasOwnProperty("active")) {
-          const regionValue = currentStateData.active;
-          const confirmed = currentStateData.confirmed;
-          const deaths = currentStateData.deceased;
-          const recovered = currentStateData.recovered;
+        // const currentDistrictData = data.find(function (obj) { if (obj.district === district.id()) { return true } });
+        if (data2.hasOwnProperty(region.id())) {
+          const currentDistrictData = data2[region.id()];
+          if (currentDistrictData && currentDistrictData.hasOwnProperty('active')) {
+            const regionValue = currentDistrictData.active;
+            const confirmed = currentDistrictData.confirmed;
+            const deaths = currentDistrictData.deaths;
+            const recovered = currentDistrictData.recovered;
+            console.log(currentDistrictData);
+            if (isFinite(regionValue)) {
+              // color the region based on it's value with respect to the maximum
+              region.fill(getColor(regionValue / max));
 
-          if (isFinite(regionValue)) {
-            // color the region based on it's value with respect to the maximum
-            region.fill(getColor(regionValue / max));
+              // show region value as a label
+              draw
+                .text(`${region.attr("name")}`)
+                .font({
+                  size: "0.65em",
+                })
+                .center(region.cx(), region.cy());
+            }
 
-            // show region value as a label
-            draw
-              .text(`${region.attr("id")}`)
-              .font({
-                size: "0.65em",
-              })
-              .center(region.cx(), region.cy());
-          }
-
-          // show region data when clicking on it
-          region.on("click", () => {
-            alert(
-              `${region.attr(
-                "name"
-              )} (${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${regionValue} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`
-            );
-          });
-
-          region.on("mouseover", () => {
-            popperEl.innerHTML = `<b>${region.attr(
-              "name"
-            )} (${region.id()})</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${regionValue} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
->>>>>>> d953781ce59aa1ba15d96287de167391b7c391b2
-            popperEl.style.visibility = "visible";
-            popperInstance = Popper.createPopper(region.node, popperEl, {
-              placement: "bottom",
+            // show region data when clicking on it
+            region.on("click", () => {
+              alert(`${region.attr("name")} (${region.id()}) :  Active Cases : ${regionValue} , Confirm Cases : ${regionValue} , Deaths Cases : ${deaths} , Recovered Cases: ${recovered}`);
             });
-          });
 
-          region.on("mouseleave", () => {
-            popperEl.style.visibility = "hidden";
-          });
+            region.on("mouseover", () => {
+              popperEl.innerHTML = `<b>${region.attr(
+                "name"
+              )} (${region.id()})</b><p style="color:orange"><b> Active Cases : ${regionValue} </b></p></b><p style="color:red"><b> Confirm Cases : ${regionValue} </b></p> <p style="color:yellow"><b>Deaths Cases : ${deaths} </b></p> <p style="color:green"><b>Recovered Cases: ${recovered}</b></p>`;
+              popperEl.style.visibility = "visible";
+              popperInstance = Popper.createPopper(region.node, popperEl, {
+                placement: "bottom",
+              });
+            });
+
+            region.on("mouseleave", () => {
+              popperEl.style.visibility = "hidden";
+            });
+          }
         }
+
       }
     });
 }
