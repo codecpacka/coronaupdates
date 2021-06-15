@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background: #000000;
+  background: #ffffff;
 }
 
 small {
@@ -37,4 +37,9 @@ path:hover {
   align-items: center;
   background-color: blue;
   margin: 0px 18%;
+}
+
+#Gujrat {
+  width: 69%;
+  height: auto;
 }
