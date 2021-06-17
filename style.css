@@ -1,7 +1,22 @@
 body {
   font-family: sans-serif;
-  background: #ffffff;
+  background:blue;
 }
+
+/* h1 {
+  background-color: blue;
+  padding-top: 30%;
+  margin: auto;
+} */
+
+/* .container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  /* -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%); */
+} */
 
 small {
   color: #ccc;
@@ -15,6 +30,9 @@ path:hover {
   /* fill: rebeccapurple; */
   stroke-width: 2.5;
   stroke: black;
+  bottom:50px;
+  visibility:visible;
+  opacity:1;
 }
 
 #popper {
@@ -24,24 +42,20 @@ path:hover {
   border-radius: 2px;
   box-shadow: 0 0 10px 3px rbga(0, 0, 0, 0.3);
   z-index: 9 !important;
+
 }
 #svg2 {
   /* height: 800px; */
-  width: 500%;
+  width: 1000%;
   /* margin: 0px, auto; */
-  margin: 0% auto;
   overflow-y: auto;
-  height: 100vh;
+  height: 1000vh;
+  margin-left: 15%;
 }
 #map {
   /* display: grid; */
   align-content: center;
   align-items: center;
   background-color: blue;
-  margin: 0px 18%;
 }
 
-#Gujrat {
-  width: 69%;
-  height: auto;
-}
