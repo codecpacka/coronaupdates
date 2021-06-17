@@ -1,7 +1,0 @@
-   .land {
-                fill: #d30000;
-                fill-opacity: 1;
-                stroke: white;
-                stroke-opacity: 1;
-                stroke-width: 0.5;
-            }

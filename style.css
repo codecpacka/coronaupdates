@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+  background: #ffffff;
+}
+
+small {
+  color: #ccc;
+}
+
+path {
+  cursor: pointer;
+}
+
+path:hover {
+  /* fill: rebeccapurple; */
+  stroke-width: 2.5;
+  stroke: black;
+}
+
+#popper {
+  visibility: hidden;
+  padding: 1em;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 0 10px 3px rbga(0, 0, 0, 0.3);
+  z-index: 9 !important;
+}
+#svg2 {
+  /* height: 800px; */
+  width: 500%;
+  /* margin: 0px, auto; */
+  margin: 0% auto;
+  overflow-y: auto;
+  height: 100vh;
+}
+#map {
+  /* display: grid; */
+  align-content: center;
+  align-items: center;
+  background-color: blue;
+  margin: 0px 18%;
+}
+
+#Gujrat {
+  width: 69%;
+  height: auto;
+}
