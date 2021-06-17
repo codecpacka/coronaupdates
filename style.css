@@ -22,11 +22,15 @@ small {
   color: #ccc;
 }
 
+b {
+  z-index: 9;
+}
+
 path {
   cursor: pointer;
 }
 
-path:hover {
+path :hover {
   /* fill: rebeccapurple; */
   stroke-width: 2.5;
   stroke: black;
