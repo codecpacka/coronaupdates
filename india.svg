@@ -25,6 +25,9 @@
                 width: 500px;
                 height: auto;
             } */
+            name {
+                fill : black;
+            }
         </style>
     </defs>
     <path class="land" data-bs-toggle="modal" data-bs-target="#exampleModal" id="AN" name="Andaman and Nicobar Islands"

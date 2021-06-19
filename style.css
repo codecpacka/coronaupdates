@@ -3,20 +3,7 @@ body {
   background:blue;
 }
 
-/* h1 {
-  background-color: blue;
-  padding-top: 30%;
-  margin: auto;
-} */
 
-/* .container {
-  position:absolute;
-  top:50%;
-  left:50%;
-  /* -ms-transform:translate(-50%,-50%);
-  -webkit-transform:translate(-50%,-50%);
-  transform:translate(-50%,-50%); */
-} */
 
 small {
   color: #ccc;
@@ -42,7 +29,7 @@ path:hover {
   border-radius: 2px;
   box-shadow: 0 0 10px 3px rbga(0, 0, 0, 0.3);
   z-index: 9 !important;
-
+  
 }
 #svg2 {
   /* height: 800px; */
